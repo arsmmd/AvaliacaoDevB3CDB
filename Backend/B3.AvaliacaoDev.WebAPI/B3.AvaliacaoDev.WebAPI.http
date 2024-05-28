@@ -1,0 +1,6 @@
+@B3.AvaliacaoDev.WebAPI_HostAddress = http://localhost:5032
+
+GET {{B3.AvaliacaoDev.WebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
