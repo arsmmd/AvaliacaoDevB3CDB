@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{47
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_SolutionItems", "_SolutionItems", "{AEFDC15B-B636-480D-A5EB-531787232C7F}"
 	ProjectSection(SolutionItems) = preProject
-		readme.mk = readme.mk
+		readme.md = readme.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "B3.AvaliacaoDev.Domain", "Backend\B3.AvaliacaoDev.Domain\B3.AvaliacaoDev.Domain.csproj", "{19B43832-EDFE-4FFD-93B3-EBBFDA1A3A37}"
