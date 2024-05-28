@@ -1,0 +1,28 @@
+<main>
+  <h1>Avaliação Dev B3 - Cálculo do CDB</h1>
+  <p>Informe um valor de investimento e um prazo em meses para resgate da aplicação:</p>
+  <div class="form-group mb-4">
+    <label for="valorInvestimento">Valor do Investimento: </label>
+    <input type="number" [(ngModel)]="valorInvestimento" class="form-control" id="valorInvestimento" placeholder="Digite um valor monetário positivo" min="0" step="0.01" required>
+    <div *ngIf="valorInvestimento == undefined || valorInvestimento == null || valorInvestimento == 0" style="color: red;">
+      Informe um valor monetário maior que 0.
+    </div>
+  </div>
+  <br />
+  <div class="form-group mb-4">
+    <label for="quantidadeMeses">Prazo em Meses: </label>
+    <input type="number" [(ngModel)]="quantidadeMeses" class="form-control" id="quantidadeMeses" placeholder="Digite o prazo em meses" min="2" required>
+    <div *ngIf="quantidadeMeses == undefined || quantidadeMeses == null || quantidadeMeses <= 1" style="color: red;">
+      Informe um prazo em meses maior que 1.
+    </div>
+  </div>
+  <br />
+  <br />
+  <button class="btn btn-primary" [disabled]="validarCampos()" (click)="enviarRequisicao()">Calcular</button>
+
+  <p id="LabelResultadoBruto" class="mt-4" aria-live="polite">Resultado do CDB Bruto: <strong>{{ ResultadoBruto | currency:'BRL':'symbol':'1.2-2' }}</strong></p>
+  <p id="LabelResultadoliquido" class="mt-4" aria-live="polite">Resultado do CDB Líquido: <strong>{{ ResultadoLiquido | currency:'BRL':'symbol':'1.2-2' }}</strong></p>
+  <p id="LabelMensagem" class="mt-4" aria-live="polite" style="color: red;"><strong>{{ Mensagem }}</strong></p>
+</main>
+
+<router-outlet />

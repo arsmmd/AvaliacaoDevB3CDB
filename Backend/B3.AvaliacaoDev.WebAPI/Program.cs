@@ -23,6 +23,8 @@ namespace B3.AvaliacaoDev.WebAPI
 
       builder.Services.AddScoped<ICdbCalculatorService, CdbCalculatorService>();
 
+      builder.Services.AddCors(o => o.AddPolicy("CORSPolicy", b => b.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().SetIsOriginAllowedToAllowWildcardSubdomains().SetPreflightMaxAge(System.TimeSpan.FromDays(1))));
+
       builder.Services.AddControllers();
       builder.Services.AddEndpointsApiExplorer();
       builder.Services.AddSwaggerGen();
@@ -36,6 +38,8 @@ namespace B3.AvaliacaoDev.WebAPI
       }
 
       app.UseHttpsRedirection();
+      app.UseCors("CORSPolicy");
+
       app.UseAuthorization();
 
       app.MapControllers();
